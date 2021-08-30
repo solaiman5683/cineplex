@@ -29,7 +29,8 @@ document.getElementById('prev').addEventListener('click', () => {
 const displayMovie = movies => {
 	const container = document.getElementById('container');
 	if (page < 1) {
-		alert('Page not Available')
+		alert('Page not Available');
+		page = 1;
 	} else {
 		container.textContent = '';
 	}
