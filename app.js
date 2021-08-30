@@ -28,7 +28,11 @@ document.getElementById('prev').addEventListener('click', () => {
 
 const displayMovie = movies => {
 	const container = document.getElementById('container');
-	container.textContent = '';
+	if (page < 1) {
+		alert('Page not Available')
+	} else {
+		container.textContent = '';
+	}
 	movies.forEach(movie => {
 		console.log(movie);
 		const imgLink = `https://image.tmdb.org/t/p/w1280${movie.poster_path}`;
