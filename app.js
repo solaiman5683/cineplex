@@ -16,26 +16,24 @@ const loadMovie = async pages => {
 };
 
 let page = 1;
-loadMovie(page)
+loadMovie(page);
 document.getElementById('next').addEventListener('click', () => {
-	page++
+	page++;
 	loadMovie(page);
-})
+});
 document.getElementById('prev').addEventListener('click', () => {
-	page--
+	page--;
 	loadMovie(page);
-})
+});
 
 const displayMovie = movies => {
 	const container = document.getElementById('container');
-	if (page % 2 != 0) {
-		container.textContent = '';
-	}
+	container.textContent = '';
 	movies.forEach(movie => {
 		console.log(movie);
 		const imgLink = `https://image.tmdb.org/t/p/w1280${movie.poster_path}`;
 		const div = document.createElement('div');
-		div.classList.add('col')
+		div.classList.add('col');
 		div.innerHTML = `
 		<div class="content item">
 					<div class="wrapper" style="background-image:url(${
