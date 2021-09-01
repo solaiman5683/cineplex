@@ -43,5 +43,4 @@ const displayMovie = movies => {
     const button = document.getElementById('button');
     button.classList.remove('d-none');
 	button.classList.add('d-block');
-	console.log(button)
 };

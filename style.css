@@ -101,7 +101,7 @@ h1 {
 }
 .content .data {
 	color: #fff;
-	transform: translateY(calc(70px + 30em));
+	transform: translateY(calc(70px + 50em));
 	background-color: rgba(51, 51, 51, 0.863);
 }
 .content .title a {
