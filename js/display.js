@@ -8,7 +8,6 @@ const displayMovie = movies => {
 		container.textContent = '';
 	}
 	movies.forEach(movie => {
-		console.log(movie);
 		const imgLink = `https://image.tmdb.org/t/p/w1280${movie.poster_path}`;
 		const div = document.createElement('div');
 		const m = document.createElement('m');
