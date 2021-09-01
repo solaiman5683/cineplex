@@ -1,18 +1,32 @@
 // const baseLink = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=9fb8030a8c19fae8a81114c9a07939c5`;
+// const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=9fb8030a8c19fae8a81114c9a07939c5&query=${search.value}`;
 
 // const imgLink = `https://image.tmdb.org/t/p/w1280/`;
 
-const loadMovie = async pages => {
-	const baseLink = `https://api.themoviedb.org/4/discover/movie?sort_by=popularity.desc&api_key=9fb8030a8c19fae8a81114c9a07939c5&page=${pages}`;
-	// const baseLink = `https://api.themoviedb.org/3/movie/latest?api_key=9fb8030a8c19fae8a81114c9a07939c5`;
-
-	// fetch(baseLink)
-	// 	.then(res => res.json())
-	// 	.then(data => displayMovie(data.results));
-
-	const response = await fetch(baseLink);
+const loadData = async url => {
+	const response = await fetch(url);
 	const data = await response.json();
 	displayMovie(data.results);
+};
+// const loadData = url => {
+// 	fetch(url)
+// 		.then(res => res.json())
+// 		.then(data => displayMovie(data.results));
+// };
+
+const searchMovie = () => {
+	const search = document.getElementById('search');
+	console.log(search.value);
+	const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=9fb8030a8c19fae8a81114c9a07939c5&query='${search.value}'&page=2`;
+
+	console.log(searchUrl);
+	loadData(searchUrl);
+};
+
+const loadMovie = pages => {
+	const baseLink = `https://api.themoviedb.org/4/discover/movie?sort_by=popularity.desc&api_key=9fb8030a8c19fae8a81114c9a07939c5&page=${pages}`;
+
+	loadData(baseLink);
 };
 
 let page = 1;
@@ -35,7 +49,7 @@ const displayMovie = movies => {
 		container.textContent = '';
 	}
 	movies.forEach(movie => {
-		console.log(movie);
+		// console.log(movie);
 		const imgLink = `https://image.tmdb.org/t/p/w1280${movie.poster_path}`;
 		const div = document.createElement('div');
 		div.classList.add('col');

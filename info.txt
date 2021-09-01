@@ -1,0 +1,4 @@
+// const baseLink = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=9fb8030a8c19fae8a81114c9a07939c5`;
+// const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=9fb8030a8c19fae8a81114c9a07939c5&query=${search.value}`;
+
+// const imgLink = `https://image.tmdb.org/t/p/w1280/`;
