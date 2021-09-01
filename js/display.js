@@ -1,23 +1,25 @@
 const displayMovie = movies => {
-    const container = document.getElementById('container');
-    if (page < 1) {
-        alert('Page not Available');
-        page = 1;
-    } else {
-        container.textContent = '';
-    }
-    movies.forEach(movie => {
-        // console.log(movie);
-        const imgLink = `https://image.tmdb.org/t/p/w1280${movie.poster_path}`;
-        const div = document.createElement('div');
-        div.classList.add('col');
-        div.innerHTML = `
+	const container = document.getElementById('container');
+	if (page < 1) {
+		alert('Page not Available');
+		page = 1;
+	} else {
+		container.textContent = '';
+	}
+	movies.forEach(movie => {
+		// console.log(movie);
+		const imgLink = `https://image.tmdb.org/t/p/w1280${movie.poster_path}`;
+		const div = document.createElement('div');
+		div.classList.add('col');
+		div.innerHTML = `
 		<div class="content item">
-					<div class="wrapper" style="background-image:url(${
-						imgLink || 'placeholder.png'
-					} );">
+					<div class="wrapper" style="background-image:url(${imgLink || 'placeholder.png'
+			} );">
 						<div class="header">
-							<div class="date">
+							<div class="date ${movie.vote_average > 7
+								? 'bg-success'
+								: movie.vote_average <= 4 ? 'bg-danger':  'bg-primary'
+							} p-2">
 								<span title="release date">${movie.vote_average}</span>
 							</div>
 						</div>
@@ -37,10 +39,10 @@ const displayMovie = movies => {
 				</div>
 		`;
 
-        container.appendChild(div);
+		container.appendChild(div);
 	});
-    document.getElementById('error').innerHTML = '';
-    const button = document.getElementById('button');
-    button.classList.remove('d-none');
+	document.getElementById('error').innerHTML = '';
+	const button = document.getElementById('button');
+	button.classList.remove('d-none');
 	button.classList.add('d-block');
 };
