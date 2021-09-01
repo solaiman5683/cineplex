@@ -131,5 +131,15 @@ h1 {
 	transform: translate(5px, -50%);
 	opacity: 1;
 }
+.shadow-lg {
+    box-shadow: 0 0 2rem rgb(56, 56, 56) !important;
+}
+.rounded {
+    border-radius: 1rem !important;
+}
 
+.modal-content {
+    background-color: #000000cb;
+    border: none;
+}
 
