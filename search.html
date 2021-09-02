@@ -49,20 +49,23 @@
 
     <section class="movies-area container-lg pb-5">
         <div class="d-flex ms-auto">
-            <input class="form-control me-2 bg-transparent text-light" id="search" type="search" placeholder="Search Movies."
-                aria-label="Search">
-            <button class="btn btn-light" type="button" onclick="searchMovie()" >
+            <input class="form-control me-2 bg-transparent text-light" id="search" type="search"
+                placeholder="Search Movies." aria-label="Search">
+            <button class="btn btn-light" type="button" onclick="searchMovie()">
                 <i class="fas fa-search fs-4 px-4 py-3"></i>
             </button>
         </div>
         <hr class="my-5" />
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4" id="container">
-            
+
         </div>
         <div id="error"></div>
+        <div id="spinner" class="spinner-grow text-light mx-auto d-none" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
         <div id="modal">
-		</div>
+        </div>
         </div>
         <div class="row p-5">
             <div class="col-12 text-center d-none" id="button">

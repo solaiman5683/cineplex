@@ -10,7 +10,7 @@ const displayMovie = movies => {
 	movies.forEach(movie => {
 		const imgLink = `https://image.tmdb.org/t/p/w1280${movie.poster_path}`;
 		const div = document.createElement('div');
-		const m = document.createElement('m');
+		const modalItem = document.createElement('div');
 		div.classList.add('col');
 		div.innerHTML = `
 				<div class="content item">
@@ -42,7 +42,7 @@ const displayMovie = movies => {
 				</div>
 		`;
 		container.appendChild(div);
-		m.innerHTML = `
+		modalItem.innerHTML = `
 			<!-- Modal -->
 			<div class="modal fade" id="m${movie.id}" tabindex="-1" aria-labelledby="${movie.id}lLabel"
 				aria-hidden="true">
@@ -66,8 +66,10 @@ const displayMovie = movies => {
 				</div>
 			</div>
 		`
-		modal.appendChild(m)
+		modal.appendChild(modalItem)
 	});
+	toggleSpinner('none');
+	toggleResult('block');
 	document.getElementById('error').innerHTML = '';
 	const button = document.getElementById('button');
 	button.classList.remove('d-none');
